@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Register</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+			html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}body{margin:0}section{display:block}a{background-color:transparent}a:active,a:hover{outline:0}h1{margin:.67em 0;font-size:2em}input{margin:0;font:inherit;color:inherit}input[type=submit]{-webkit-appearance:button;cursor:pointer}input::-moz-focus-inner{padding:0;border:0}input{line-height:normal}@media print{*{color:#000!important;text-shadow:none!important;background:0 0!important;-webkit-box-shadow:none!important;box-shadow:none!important}a,a:visited{text-decoration:underline}a[href]:after{content:" (" attr(href) ")"}}@font-face{font-family:'Glyphicons Halflings';src:url(../fonts/glyphicons-halflings-regular.eot);src:url(../fonts/glyphicons-halflings-regular.eot?#iefix) format('embedded-opentype'),url(../fonts/glyphicons-halflings-regular.woff2) format('woff2'),url(../fonts/glyphicons-halflings-regular.woff) format('woff'),url(../fonts/glyphicons-halflings-regular.ttf) format('truetype'),url(../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular) format('svg')}*{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}html{font-size:10px;-webkit-tap-highlight-color:rgba(0,0,0,0)}body{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:14px;line-height:1.42857143;color:#333;background-color:#fff}input{font-family:inherit;font-size:inherit;line-height:inherit}a{color:#337ab7;text-decoration:none}a:focus,a:hover{color:#23527c;text-decoration:underline}a:focus{outline:thin dotted;outline:5px auto -webkit-focus-ring-color;outline-offset:-2px}.h1,h1{font-family:inherit;font-weight:500;line-height:1.1;color:inherit}.h1,h1{margin-top:20px;margin-bottom:10px}.h1,h1{font-size:36px}ul{margin-top:0;margin-bottom:10px}ul ul{margin-bottom:0}@keyframes progress-bar-stripes{from{background-position:40px 0}to{background-position:0 0}}@-ms-viewport{width:device-width}
+			/* --------------------------------------------------------------------------------------------------------------------------------- */
+			body{font-size:14px; color:#111; background:#f2f2f2; font-family: 'Lato', sans-serif;}
+		ul,li,h1{padding:0px; margin:0px; list-style:none;}
+		.text{color:#505050; font-size:16px;}
+		.admin_login_bg{width:100%;float:left;background:url(./assets/images/admin-login-bg.jpg) no-repeat left;background-size:cover;height:100vh;}
+		.admin_login_main{width: 470px;display: inline-block;background: #fff;transform: translate(-50%,-50%);top: 50%;left: 50%;position: absolute;padding:50px 20px;box-shadow:15px 0px 38px rgba(0,0,0,.4);}
+		.admin_login_text{width:100%;display:inline-block;text-align:center;color:#282828;font-size:36px;padding-bottom:30px;text-transform:uppercase;}
+		.admin_login_main_ul{width:100%;float:left;}
+		.admin_login_main_ul li{width:100%;margin-bottom:20px; float:left;border:1px solid #9d9d9d;padding:0px 10px;border-radius:5px;}
+		.admin_login_main_ul li input{width:96%;float:right;font-size:16px;color:#424242;padding:13px 0px 13px 10px;border:none;background:none;}
+		.admin_login_main_ul li i{float:left;padding-top: 16px;color:#a6a6a6;}
+		.admin_login_main_ul li input[type='submit']{width:100%;display:inline-block;background:#89c04e;color:#fff;border:1px solid #89c04e;font-size:20px;padding:13px 0px;box-shadow: -2px 6px 18px rgba(0,0,0,.1);text-transform:uppercase;}
+		.admin_login_main_ul li input[type='submit']:hover{background:#fff;color:#89c04e;border:1px solid #89c04e;}
+		.admin_login_main_ul li input:focus{outline:none;}
+		.admin_login_main_ul li:last-child{padding:0px;}
+		.forgot_pasword_admin{width:100%;display:inline-block;text-align:center;color:#333333;font-size:16px;padding-top:10px;}
+
+		input::-webkit-outer-spin-button,
+		input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+		input[type=number] { -moz-appearance:textfield; }
+	</style>
+
+<link href="https://use.fontawesome.com/releases/v5.0.1/css/all.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+</head>
+
+<!-- get background image from assets folder -->
+<body>
+
+	<section class="admin_login_bg">
+		<div class="admin_login_main">
+			<div style="text-align: center;margin-bottom: 30px;font-size: 22px;">
+				<h3> Register </h3>
+			</div>
+			
+			<ul class="admin_login_main_ul">
+				<li>
+					<i class="fas fa-user"></i>
+					<input type="text" placeholder="Name" id="name" autocomplete="off">
+				</li>
+				<li>
+					<i class="fas fa-phone"></i>
+					<input type="number" placeholder="Phone Number" id="phone" autocomplete="off">
+				</li>
+				<li>
+					<i class="fas fa-envelope"></i>
+					<input type="text" placeholder="Email" id="email" autocomplete="off">
+				</li>
+				<li>
+					<i class="fas fa-key"></i>
+					<input type="password" placeholder="Password" id="password" autocomplete="off">
+				</li>
+				<li>
+					<input type="button" id="register" value="Register">
+				</li>
+			</ul>
+		</div>
+	</section>
+
+
+
+	<link rel="stylesheet" href="/assets/css/toastr.css">
+	<%- include('./layout/javascript') -%>
+	<script>
+		$(document).ready(function () {
+			$('#register').click(function () {
+				blockUi();
+				var password = $('#password').val();
+				var email = $('#email').val();
+				var name = $('#name').val();
+				var phone = $('#phone').val();
+				var data = { email, password, name, phone };
+				$.ajax({
+					type: 'post',
+					url: '/register',
+					dataType: 'json',
+					data: data,
+					success: function (data) {
+						$.unblockUI();
+						if(data.status == 1){
+							toastr.success(data.message);
+							setInterval(() => {
+								window.location.href = '/login';
+							}, 2000);
+						}
+						if(data.status == 0){
+							toastr.error(data.message);
+						}
+					}
+				});
+			});
+		});
+	</script>
+</body>
+
+</html>
