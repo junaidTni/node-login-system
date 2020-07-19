@@ -1,8 +1,8 @@
 Clone the repo
 
-Run
+Run:
 npm i
 
-Run 
+Run:
 npm run dev   OR   npm run start    
 
